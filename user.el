@@ -8,6 +8,11 @@
 
 (desktop-save-mode 1)
 ()
+
+;;basic colors - comment this out to use light background
+(custom-set-faces
+ '(default ((t (:inherit nil :stipple nil :background "black" :foreground "white" :inverse-video nil :box nil :strike-through nil :overline nil :underline nil :slant normal :weight normal :height 90 :width normal :foundry "unknown" :family "DejaVu Sans Mono")))))
+
 ;;auto-complete, ac-slime
 (autoload 'set-up-slime-ac "ac-slime")
 (autoload 'ac-config-default "auto-complete-config")
