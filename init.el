@@ -26,7 +26,7 @@
             (clojure-mode-font-lock-setup)
             (font-lock-mode t)))
 
-
 (add-hook 'slime-repl-mode-hook (lambda () (paredit-mode 1)))
 
-
+(custom-set-variables
+ '(menu-bar-mode t))

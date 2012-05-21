@@ -1,35 +1,18 @@
-;;time loading of this file
-;(require 'cl) ; a rare necessary use of REQUIRE
-
-
 ;;disable suspending emacs on ctrl-z
 (global-set-key (kbd "C-z") 'undo)
 (global-unset-key (kbd "C-x C-z"))
 ;jump to line
 (global-set-key (kbd "C-c M-l") 'goto-line)
-;buffer switch 
-;(global-set-key (kbd "C-,") 'ido-switch-buffer)
-;;frame-switch
-;(global-set-key (kbd "C-q") 'windmove-up)
-;(global-set-key (kbd "C-z") 'windmove-down)
 ;;use ibuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
 
-;;use w tiling window mgr
-;(setq pop-up-frames nil)
-
-;;associate some file extensions with modes
-;(add-to-list 'auto-mode-alist '("\\.*repo$" . conf-unix-mode))
-
-;;basic colors
 (desktop-save-mode 1)
-
+()
 ;;auto-complete, ac-slime
 (autoload 'set-up-slime-ac "ac-slime")
 (autoload 'ac-config-default "auto-complete-config")
 (ac-config-default)
 (autoload 'slime-repl-mode "slime") 
-;(add-to-list 'ac-dictionary-directories "~/.emacs.d/jweiss/ac-dict")
 (add-to-list 'ac-modes 'slime-repl-mode)
 (add-hook 'slime-mode-hook 'set-up-slime-ac)
 (add-hook 'slime-repl-mode-hook 'set-up-slime-ac)
@@ -73,22 +56,14 @@
 (defcljface clojure-double-quote "#00920A"   "Clojure special")
 
 
-
 (autoload 'clojure-mode "clojure-mode")
-;(set-clojure-colors 'clojure-mode)
-;(set-clojure-colors 'slime-repl-mode)
-
-;(add-hook 'clojure-mode-hook 'durendal-enable-auto-compile)
 (add-hook 'slime-repl-mode-hook 'durendal-slime-repl-paredit)
-
 (add-hook 'sldb-mode-hook 'durendal-dim-sldb-font-lock)
-;(add-hook 'slime-compilation-finished-hook 'durendal-hide-successful-compile)
-
 (add-hook 'clojure-mode-hook 
           (lambda () 
             (define-key clojure-mode-map (kbd "M-[") 'paredit-wrap-square)
             (define-key clojure-mode-map (kbd "M-{") 'paredit-wrap-curly)))
-;(eval-after-load 'clojure-mode (yas/reload-all))
+
 
 (autoload 'paredit-wrap-square "paredit")
 (add-hook 'slime-connected-hook
