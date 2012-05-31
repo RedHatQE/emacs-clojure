@@ -7,7 +7,8 @@
   (package-refresh-contents))
 
 ;; Add in your own as you wish:
-(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-bindings clojure-mode durendal ac-slime)
+(defvar my-packages '(starter-kit starter-kit-lisp starter-kit-bindings
+                                  clojure-mode durendal ac-slime ace-jump-mode idomenu)
   "A list of packages to ensure are installed at launch.")
 
 (dolist (p my-packages)

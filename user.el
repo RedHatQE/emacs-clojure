@@ -5,9 +5,13 @@
 (global-set-key (kbd "C-c M-l") 'goto-line)
 ;;use ibuffer
 (global-set-key (kbd "C-x C-b") 'ibuffer)
+;;use ace-jump-mode
+(global-set-key (kbd "C-'") 'ace-jump-mode)
+;;use idomenu to search for symbols
+(global-set-key (kbd "C-o") 'idomenu)
 
 (desktop-save-mode 1)
-()
+
 
 ;;basic colors - comment this out to use light background
 (custom-set-faces
